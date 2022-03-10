@@ -1,5 +1,5 @@
 package com.bridgelabz;
-
+import java.util.Scanner;
 public class AddressBookSystem {
     String firstName;
     String lastName;
@@ -9,18 +9,31 @@ public class AddressBookSystem {
     long zip;
     String phoneNumber;
     String email;
+    void addPerson() {
+    	Scanner scan=new Scanner(System.in);
+    	System.out.println("First Name :");
+    	this.firstName=scan.nextLine();
+    	System.out.println("Last Name :");
+    	this.lastName=scan.nextLine();
+    	System.out.println("Enter the address :");
+    	this.address=scan.nextLine();
+    	System.out.println("Enter city : ");
+    	this.city=scan.nextLine();
+    	System.out.println("Enter state : ");
+    	this.state=scan.nextLine();
+    	System.out.println("Enter zip : ");
+    	this.zip=scan.nextLong();
+    	System.out.println("Enter Phone Number : ");
+    	this.phoneNumber=scan.nextLine();
+    	System.out.println("Enter Email : ");
+    	this.email=scan.nextLine();
+    	
+    }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to Address Book Program ");
         AddressBookSystem contact=new AddressBookSystem();
-        contact.firstName="Jayesh";
-        contact.lastName="Dahiwale";
-        contact.address="Ashok Nagar Layout, Near Petrol Pump,Adyal";
-        contact.city="Bhandara";
-        contact.state="Maharashtra";
-        contact.zip=441903;
-        contact.phoneNumber="7066944829";
-        contact.email="jayjdahivale@gmail.com";
+        contact.addPerson();
         
         
 	}
