@@ -6,9 +6,10 @@ public class AddressBookSystem {
     String address;
     String city;
     String state;
-    long zip;
+   
     String phoneNumber;
     String email;
+    long zip;
     Scanner scan=new Scanner(System.in);
     void addPerson() {
     	
@@ -22,12 +23,12 @@ public class AddressBookSystem {
     	this.city=scan.nextLine();
     	System.out.println("Enter state : ");
     	this.state=scan.nextLine();
-    	System.out.println("Enter zip : ");
-    	this.zip=scan.nextLong();
     	System.out.println("Enter Phone Number : ");
     	this.phoneNumber=scan.nextLine();
     	System.out.println("Enter Email : ");
     	this.email=scan.nextLine();
+    	System.out.println("Enter zip : ");
+    	this.zip=scan.nextLong();
     	
     }
     void deletePerson(String name,AddressBookSystem contact) {
@@ -49,7 +50,7 @@ public class AddressBookSystem {
         AddressBookSystem contact=new AddressBookSystem();
        
         while(true) {
-        	System.out.println("Do you want to add/edit/delete the contact (0/1/2) :");
+        	System.out.println("Do you want to add/edit/delete the contact (0/1/2) :Press 3 to quit");
         	int input=scan.nextInt();
         	if(input==0) {
         		contact.addPerson();
@@ -57,7 +58,7 @@ public class AddressBookSystem {
         	}
         	else if(input==2) {
         		Scanner nameScan=new Scanner(System.in);
-        		System.out.println("Enter the first name of the person you want to edit : ");
+        		System.out.println("Enter the first name of the person you want to delete : ");
         		String name=nameScan.nextLine();
         		contact.deletePerson(name, contact);
         	}
@@ -79,6 +80,11 @@ public class AddressBookSystem {
         	}		
         		
         	
+        	else if(input==3) {
+        		System.out.println("Program successfully closed");
+        		break;
+        		
+        	}
         	else {
         		System.out.println("Enter the valid command");
         	}
