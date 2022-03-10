@@ -9,8 +9,9 @@ public class AddressBookSystem {
     long zip;
     String phoneNumber;
     String email;
+    Scanner scan=new Scanner(System.in);
     void addPerson() {
-    	Scanner scan=new Scanner(System.in);
+    	
     	System.out.println("First Name :");
     	this.firstName=scan.nextLine();
     	System.out.println("Last Name :");
@@ -31,9 +32,40 @@ public class AddressBookSystem {
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Scanner scan=new Scanner(System.in);
 		System.out.println("Welcome to Address Book Program ");
         AddressBookSystem contact=new AddressBookSystem();
-        contact.addPerson();
+       
+        while(true) {
+        	System.out.println("Do you want to add/edit the contact (0/1) :");
+        	int input=scan.nextInt();
+        	if(input==0) {
+        		contact.addPerson();
+        		break;
+        	}
+        	else if(input==1 && contact.firstName==null) {
+        		System.out.println("Adressbook is empty .Please add");}
+        		
+        	else if(input==1) {
+        		Scanner nameScan=new Scanner(System.in);
+        		System.out.println("Enter the first name of the person you want to edit : ");
+        		String name=nameScan.nextLine();
+        		if(name.equals(contact.firstName)) {
+        			contact.addPerson();
+        		
+        		}
+        	   else {
+        			System.out.println("No such person exist in the database");
+        		}
+        		break;
+        	}		
+        		
+        	
+        	else {
+        		System.out.println("Enter the valid command");
+        	}
+        }
+        
         
         
 	}
