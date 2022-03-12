@@ -12,7 +12,7 @@ public class Contact {
 	String email;
 	long zip;
 	
-	void addInfo() {
+	void addContact() {
 		Scanner scan=new Scanner(System.in);
 		System.out.println("First Name :");
 		this.firstName = scan.nextLine();
