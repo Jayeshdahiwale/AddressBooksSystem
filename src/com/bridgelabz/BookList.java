@@ -8,7 +8,7 @@ public class BookList {
 	void addBook(String name, AddressBook book) {
 	    book.bookName=name;
 		this.books.add(book);
-	    System.out.println("Book added successfully");
+	    System.out.println("Book "+name+" added successfully");
 		
 	}
 	
@@ -46,6 +46,8 @@ public class BookList {
 			condition=1;
 			break;
 		case 1:
+			if(books.get(i).list.size()==0) {System.out.println("Addressbook is empty");}
+			else {
 			System.out.println("Enter the first name of person you want to edit :");
 			Scanner scan1=new Scanner(System.in);
 			String name1=scan1.nextLine();
@@ -56,9 +58,17 @@ public class BookList {
 					condition=1;
 					break;
 				}
+			
+			if(condition==0) {
+				System.out.println("Contact doesn't exist with the given name "+name1);
+			}
+			
+			}
 			}
 			break;
 		case 2:
+			if(books.get(i).list.size()==0) {System.out.println("Addressbook is empty");}
+			else {
 			System.out.println("Enter the first name of person you want to edit :");
 			Scanner scan2=new Scanner(System.in);
 			String name2=scan2.nextLine();
@@ -70,16 +80,21 @@ public class BookList {
 					break;
 				}
 			}
+			if(condition==0) {
+				System.out.println("Contact doesn't exist with the given name "+name2);
+			}
+			}
+			break;
 		default:
 			System.out.println("Enter valid command");
-			
+			break;
 		}
 		}
 	}
 	int checkBook(String name) {
 		int result=0;
 		if( this.books.size()==0) {
-			System.out.println("Booklist is empty");
+			System.out.println("Booklist was empty. "+name+" is created.");
 			 
 			
 		}
@@ -97,7 +112,7 @@ public class BookList {
 				}
 			}
 			if(track==0) {
-				System.out.println("Book doesn't exist with the given name.");
+				System.out.println("Book doesn't exist with the given name. "+name+" is created");
 				
 			}
 			
