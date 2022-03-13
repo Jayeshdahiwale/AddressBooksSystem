@@ -60,7 +60,7 @@ public class AddressBook {
 
 		System.out.println("Welcome to Address Book Program ");
 
-		BookList book = new BookList();
+		BookList shelf = new BookList();
 
 		while (true) {
 			AddressBook addressBook = new AddressBook();
@@ -74,7 +74,7 @@ public class AddressBook {
 				System.out.println("The program is closed");
 				break;
 			}
-			int result = book.checkBook(bookName);//// (It can return 0 or 1)It will return 1 if book exist b and break
+			int result = shelf.checkBook(bookName);//// (It can return 0 or 1)It will return 1 if book exist b and break
 													//// down loop
 			int condition = 0;///// It will keep check on the addressbook created or not
 			while (true) {
@@ -103,7 +103,7 @@ public class AddressBook {
 				}
 
 				else if (input == 3) {
-					book.addBook(bookName, addressBook);
+					shelf.addBook(bookName, addressBook);
 					break;
 				}
 
