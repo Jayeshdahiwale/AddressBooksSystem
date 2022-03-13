@@ -29,13 +29,14 @@ public class BookList {
 		System.out.println("Enter Email : ");
 	    value.email = scan.nextLine();
 		System.out.println("Enter zip : ");
-		value.zip = scan.nextLong();
+		value.zip = scan.nextLine();
 	}
 	void operations(ArrayList<AddressBook> books,int i) {
 		Scanner input=new Scanner(System.in);
-		int condition=0;
+		int condition1=0;///This is for checking the contact name exist or not
+		int condition=0; ///This is condition for running while loop
 		while(condition==0) {
-		System.out.println("Do you want to add/edit/delete contact (0/1/2) :");
+		System.out.println("Do you want to add/edit/delete contact (0/1/2) :Press 3 to go bck to main menu");
 		int response=input.nextInt();
 		switch (response) {
 		case 0:
@@ -43,7 +44,7 @@ public class BookList {
 			contact.addContact();
 			books.get(i).list.add(contact);
 			System.out.println("Contact added successfully");
-			condition=1;
+			
 			break;
 		case 1:
 			if(books.get(i).list.size()==0) {System.out.println("Addressbook is empty");}
@@ -55,11 +56,11 @@ public class BookList {
 				if(value.firstName.equals(name1)) {
 					addInfo(value);
 					System.out.println("Contact updated successfully");
-					condition=1;
+					condition1=1;
 					break;
 				}
 			
-			if(condition==0) {
+			if(condition1==0) {
 				System.out.println("Contact doesn't exist with the given name "+name1);
 			}
 			
@@ -76,15 +77,17 @@ public class BookList {
 				if(value.firstName.equals(name2)) {
 					books.get(i).list.remove(value);
 					System.out.println("Contact deleted successfully");
-					condition=1;
+					condition1=1;
 					break;
 				}
 			}
-			if(condition==0) {
+			if(condition1==0) {
 				System.out.println("Contact doesn't exist with the given name "+name2);
 			}
 			}
 			break;
+		case 3:
+			condition=1;
 		default:
 			System.out.println("Enter valid command");
 			break;

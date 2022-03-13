@@ -10,7 +10,7 @@ public class Contact {
 
 	String phoneNumber;
 	String email;
-	long zip;
+	String zip;
 	
 	void addContact() {
 		Scanner scan=new Scanner(System.in);
@@ -29,6 +29,6 @@ public class Contact {
 		System.out.println("Enter Email : ");
 		this.email = scan.nextLine();
 		System.out.println("Enter zip : ");
-		this.zip = scan.nextLong();
+		this.zip = scan.nextLine();
 	}
 }
