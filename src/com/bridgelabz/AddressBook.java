@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class AddressBook {
 
-    ArrayList<Contact> list = new ArrayList<Contact>();
+	ArrayList<Contact> list = new ArrayList<Contact>();
 	String bookName; /// It represent the name of book
 
 	void addContact() {
-		Contact contact=new Contact();
+		Contact contact = new Contact();
 		contact.addContact();
 		list.add(contact);
 		System.out.println("Contact added successfully");
@@ -57,41 +57,37 @@ public class AddressBook {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(System.in);
+
 		System.out.println("Welcome to Address Book Program ");
 
-		
-		
 		BookList book = new BookList();
-       
+
 		while (true) {
 			AddressBook addressBook = new AddressBook();
 			Scanner scan3 = new Scanner(System.in);
 			System.out.println("Enter the name of Book you want to  access or add or press 'q' to quit");
 			String bookName = scan3.nextLine();
 			if (bookName.equals("q")) {
-				
+				if (addressBook.list.size() > 0) {
+					book.addBook(bookName, addressBook);
+				}
 				System.out.println("The program is closed");
 				break;
 			}
-			int result=book.checkBook(bookName);//// (It can return 0 or 1)It will return 1 if book exist band break down loop
-			int condition=0;/////It will keep check on the addressbook creted or not
+			int result = book.checkBook(bookName);//// (It can return 0 or 1)It will return 1 if book exist band break
+													//// down loop
+			int condition = 0;///// It will keep check on the addressbook creted or not
 			while (true) {
-                if(result==1) {
-                	break;
-                }
+				if (result == 1) {
+					break;
+				}
 				System.out.println("Do you want to add/edit/delete the contact (0/1/2) :Press 3 to Go back to main menu");
+				Scanner scan = new Scanner(System.in);
 				int input = scan.nextInt();
-				
+
 				if (input == 0) {
-					if(condition==0) {
+
 					addressBook.addContact();
-					book.addBook(bookName, addressBook);
-					}
-					else {
-						addressBook.addContact();
-					}
-					condition=1;
 
 				} else if (input == 1) {
 					Scanner scan1 = new Scanner(System.in);
@@ -107,7 +103,7 @@ public class AddressBook {
 				}
 
 				else if (input == 3) {
-				
+					book.addBook(bookName, addressBook);
 					break;
 				}
 
