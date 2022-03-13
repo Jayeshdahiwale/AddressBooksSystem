@@ -70,7 +70,7 @@ public class BookList {
 		case 2:
 			if(books.get(i).list.size()==0) {System.out.println("Addressbook is empty");}
 			else {
-			System.out.println("Enter the first name of person you want to edit :");
+			System.out.println("Enter the first name of person you want to delete :");
 			Scanner scan2=new Scanner(System.in);
 			String name2=scan2.nextLine();
 			for(Contact value:books.get(i).list) {

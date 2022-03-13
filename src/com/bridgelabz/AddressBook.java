@@ -68,15 +68,15 @@ public class AddressBook {
 			System.out.println("Enter the name of Book you want to  access or add or press 'q' to quit");
 			String bookName = scan3.nextLine();
 			if (bookName.equals("q")) {
-				if (addressBook.list.size() > 0) {
-					book.addBook(bookName, addressBook);
-				}
+				//if (addressBook.list.size() > 0) {
+					//book.addBook(bookName, addressBook);
+				//}
 				System.out.println("The program is closed");
 				break;
 			}
-			int result = book.checkBook(bookName);//// (It can return 0 or 1)It will return 1 if book exist band break
+			int result = book.checkBook(bookName);//// (It can return 0 or 1)It will return 1 if book exist b and break
 													//// down loop
-			int condition = 0;///// It will keep check on the addressbook creted or not
+			int condition = 0;///// It will keep check on the addressbook created or not
 			while (true) {
 				if (result == 1) {
 					break;
